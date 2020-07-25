@@ -84,7 +84,9 @@ final class SvgInlineBootstrap extends \YiiRocks\SvgInline\SvgInline implements 
 
         if (!$width && !$height) {
             Html::addCssClass($this->class, $this->prefix);
-            $widthClass = $this->icon->get('fixedWidth') ? "{$this->prefix}-fw" : "{$this->prefix}-w-" . ceil($svgWidth / $svgHeight * 16);
+            $widthClass = $this->icon->get('fixedWidth')
+                ? "{$this->prefix}-fw"
+                : "{$this->prefix}-w-" . ceil($svgWidth / $svgHeight * 16);
             Html::addCssClass($this->class, $widthClass);
         }
     }
