@@ -11,9 +11,9 @@ use Yiisoft\Html\Html;
  */
 final class SvgInlineBootstrap extends \YiiRocks\SvgInline\SvgInline implements SvgInlineBootstrapInterface
 {
-
     /** @var string CSS class basename */
     protected string $prefix;
+
     /** @var string Path to the Bootstrap Icons folder */
     private string $bootstrapIconsFolder;
 
