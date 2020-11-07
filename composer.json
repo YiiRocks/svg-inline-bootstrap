@@ -21,7 +21,7 @@
     "require": {
         "php": ">=7.4.0",
         "npm-asset/bootstrap-icons": "^1.0",
-        "yiirocks/svg-inline": "^1.0@dev",
+        "yiirocks/svg-inline": "^1.0",
         "yiisoft/html": "^3.0@dev"
     },
     "require-dev": {
@@ -29,6 +29,7 @@
         "phpmd/phpmd": "@stable",
         "phpunit/phpunit": "^9.0",
         "squizlabs/php_codesniffer": "3.*",
+        "vimeo/psalm": "^4.1",
         "yiisoft/di": "^3.0@dev",
         "yiisoft/files": "^3.0@dev"
     },

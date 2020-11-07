@@ -27,7 +27,7 @@ final class SvgInlineBootstrap extends \YiiRocks\SvgInline\SvgInline implements 
      * Sets the name of the icon.
      *
      * @param string $name  name of the icon
-     * @return self component object
+     * @return BootstrapIcon component object
      */
     public function name(string $name): BootstrapIcon
     {
