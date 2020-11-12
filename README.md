@@ -33,4 +33,4 @@ The package is tested with [PHPUnit](https://phpunit.de/). To run tests:
 [![Code Climate maintainability](https://img.shields.io/codeclimate/maintainability/YiiRocks/svg-inline-bootstrap.svg)](https://codeclimate.com/github/YiiRocks/svg-inline-bootstrap/maintainability)
 [![Codacy branch grade](https://img.shields.io/codacy/grade/1ac06a8fb1fe4d17ba208399381945e2/master.svg)](https://app.codacy.com/gh/YiiRocks/svg-inline-bootstrap)
 [![Scrutinizer code quality (GitHub/Bitbucket)](https://img.shields.io/scrutinizer/quality/g/yiirocks/svg-inline-bootstrap/master.svg)](https://scrutinizer-ci.com/g/yiirocks/svg-inline-bootstrap/?branch=master)
-![GitHub Workflow Status](https://img.shields.io/github/workflow/status/yiirocks/svg-inline-bootstrap/PHP%20Composer)
+![GitHub Workflow Status](https://img.shields.io/github/workflow/status/yiirocks/svg-inline-bootstrap/analysis)
