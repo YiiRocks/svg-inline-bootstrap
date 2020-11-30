@@ -2,7 +2,16 @@
     "name": "yiirocks/svg-inline-bootstrap",
     "description": "Inline Bootstrap Icons for Yii",
     "type": "yii3-extension",
-    "keywords": ["yii", "yii3", "bootstrap icons", "icon", "icons", "svg", "inline"],
+    "keywords": [
+        "yii",
+        "yii3",
+        "extension",
+        "bootstrap icons",
+        "icon",
+        "icons",
+        "svg",
+        "inline"
+    ],
     "homepage": "https://www.yii.rocks/svg-inline-bootstrap/",
     "license": "MIT",
     "minimum-stability": "dev",
