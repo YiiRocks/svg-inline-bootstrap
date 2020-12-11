@@ -29,7 +29,7 @@
     },
     "require": {
         "php": ">=7.4.0",
-        "npm-asset/bootstrap-icons": "^1.0",
+        "npm-asset/bootstrap-icons": "^1.2",
         "yiirocks/svg-inline": "^1.0",
         "yiisoft/composer-config-plugin": "^1.0",
         "yiisoft/html": "^3.0"
