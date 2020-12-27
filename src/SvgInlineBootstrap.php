@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace YiiRocks\SvgInline\Bootstrap;
 
+use Psr\Container\ContainerInterface;
+use Yiisoft\Aliases\Aliases;
 use Yiisoft\Html\Html;
 
 /**
@@ -21,7 +23,23 @@ final class SvgInlineBootstrap extends \YiiRocks\SvgInline\SvgInline implements 
     private bool $fixedWidth;
 
     /** @var BootstrapIcon icon properties */
-    private Object $icon;
+    private BootstrapIcon $icon;
+
+    /**
+     * Construct
+     *
+     * @param Aliases $aliases
+     * @param BootstrapIcon $icon
+     * @param ContainerInterface $container
+     */
+    public function __construct(
+        Aliases $aliases,
+        BootstrapIcon $icon,
+        ContainerInterface $container
+    ) {
+        parent::__construct($aliases, $container);
+        $this->icon = $icon;
+    }
 
     /**
      * Sets the name of the icon.
