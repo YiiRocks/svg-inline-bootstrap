@@ -48,4 +48,12 @@ class SvgInlineBootstrapTest extends TestCase
     {
         $this->assertStringContainsString('width="42" height="42"', $this->svgInline->bootstrap('award')->width(42));
     }
+
+    public function testReset(): void
+    {
+        $firstRun = (string) $this->svgInline->bootstrap('award')->class('yourClass');
+        $secondRun = (string) $this->svgInline->bootstrap('award');
+
+        $this->assertNotEquals($firstRun, $secondRun);
+    }
 }

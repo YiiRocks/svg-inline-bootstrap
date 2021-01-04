@@ -26,22 +26,6 @@ final class SvgInlineBootstrap extends \YiiRocks\SvgInline\SvgInline implements 
     private BootstrapIcon $icon;
 
     /**
-     * Construct
-     *
-     * @param Aliases $aliases
-     * @param BootstrapIcon $icon
-     * @param ContainerInterface $container
-     */
-    public function __construct(
-        Aliases $aliases,
-        BootstrapIcon $icon,
-        ContainerInterface $container
-    ) {
-        parent::__construct($aliases, $container);
-        $this->icon = $icon;
-    }
-
-    /**
      * Sets the name of the icon.
      *
      * @param string $name  name of the icon
