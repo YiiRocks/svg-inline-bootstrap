@@ -4,8 +4,6 @@ declare(strict_types=1);
 
 namespace YiiRocks\SvgInline\Bootstrap;
 
-use Psr\Container\ContainerInterface;
-use Yiisoft\Aliases\Aliases;
 use Yiisoft\Html\Html;
 
 /**
