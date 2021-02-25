@@ -51,8 +51,8 @@ class SvgInlineBootstrapTest extends TestCase
 
     public function testReset(): void
     {
-        $firstRun = (string) $this->svgInline->bootstrap('award')->class('yourClass');
-        $secondRun = (string) $this->svgInline->bootstrap('award');
+        $firstRun = $this->svgInline->bootstrap('award')->class('yourClass')->render();
+        $secondRun = $this->svgInline->bootstrap('award')->render();
 
         $this->assertNotEquals($firstRun, $secondRun);
     }
