@@ -40,7 +40,7 @@
         "phpunit/phpunit": "^9.0",
         "squizlabs/php_codesniffer": "^3.5",
         "vimeo/psalm": "^4.1",
-        "yiisoft/composer-config-plugin": "^1.0",
+        "yiisoft/config": "^1.0",
         "yiisoft/di": "^3.0"
     },
     "autoload": {
@@ -78,7 +78,7 @@
         },
         "config-plugin": {
             "params": "config/params.php",
-            "web": "config/web.php"
+            "common": "config/common.php"
         }
     },
     "config": {
