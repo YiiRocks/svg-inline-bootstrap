@@ -31,7 +31,7 @@
         "php": ">=7.4.0",
         "npm-asset/bootstrap-icons": "^1.2",
         "yiirocks/svg-inline": "^1.0",
-        "yiisoft/html": "^1.0"
+        "yiisoft/html": "^2.2"
     },
     "require-dev": {
         "friendsofphp/php-cs-fixer": "^3.0",
