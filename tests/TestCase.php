@@ -9,7 +9,10 @@ use YiiRocks\SvgInline\SvgInline;
 use YiiRocks\SvgInline\SvgInlineInterface;
 use Yiisoft\Aliases\Aliases;
 use Yiisoft\Config\Config;
+use Yiisoft\Config\ConfigPaths;
+use Yiisoft\Config\Modifier\RecursiveMerge;
 use Yiisoft\Di\Container;
+use Yiisoft\Di\ContainerConfig;
 
 abstract class TestCase extends \PHPUnit\Framework\TestCase
 {
@@ -31,12 +34,18 @@ abstract class TestCase extends \PHPUnit\Framework\TestCase
     protected function setUp(): void
     {
         parent::setUp();
-        $config = new Config(dirname(__DIR__), '/config/packages');
-        $this->container = new Container($config->get('common'));
+        $config = new Config(
+            new ConfigPaths(dirname(__DIR__), 'config'),
+            '/',
+            [RecursiveMerge::groups('params')]
+        );
+        $containerConfig = ContainerConfig::create()
+            ->withDefinitions(
+                $config->get('di-web')
+            );
+        $this->container = new Container($containerConfig);
         $this->aliases = $this->container->get(Aliases::class);
-        $this->aliases->set('@root', dirname(__DIR__, 1));
-        $this->aliases->set('@assets', '@root/tests/assets');
-        $this->aliases->set('@assetsUrl', '/baseUrl');
+        $this->aliases->set('@root', dirname(__DIR__));
         $this->aliases->set('@vendor', '@root/vendor');
         $this->svgInline = $this->container->get(SvgInlineInterface::class);
     }

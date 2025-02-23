@@ -39,6 +39,14 @@ class SvgInlineBootstrapTest extends TestCase
         $this->assertStringContainsString('width="42" height="42"', $this->svgInline->bootstrap('award')->height(42));
     }
 
+    public function testReset(): void
+    {
+        $firstRun = $this->svgInline->bootstrap('award')->class('yourClass')->render();
+        $secondRun = $this->svgInline->bootstrap('award')->render();
+
+        $this->assertNotEquals($firstRun, $secondRun);
+    }
+
     public function testTitle(): void
     {
         $this->assertStringContainsString('<title>Demo Title</title>', $this->svgInline->bootstrap('award')->title('Demo Title'));
@@ -47,13 +55,5 @@ class SvgInlineBootstrapTest extends TestCase
     public function testWidth(): void
     {
         $this->assertStringContainsString('width="42" height="42"', $this->svgInline->bootstrap('award')->width(42));
-    }
-
-    public function testReset(): void
-    {
-        $firstRun = $this->svgInline->bootstrap('award')->class('yourClass')->render();
-        $secondRun = $this->svgInline->bootstrap('award')->render();
-
-        $this->assertNotEquals($firstRun, $secondRun);
     }
 }

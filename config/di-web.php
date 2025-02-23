@@ -9,7 +9,7 @@ use YiiRocks\SvgInline\Bootstrap\SvgInlineBootstrapInterface;
 
 return [
     SvgInlineBootstrapInterface::class => [
-        '__class' => SvgInlineBootstrap::class,
+        'class' => SvgInlineBootstrap::class,
         'setBootstrapIconsFolder()' => [$params['yiirocks/svg-inline-bootstrap']['bootstrapIconsFolder']],
         'setFallbackIcon()' => [$params['yiirocks/svg-inline-bootstrap']['fallbackIcon']],
         'setFill()' => [$params['yiirocks/svg-inline-bootstrap']['fill']],
