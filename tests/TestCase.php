@@ -41,7 +41,7 @@ abstract class TestCase extends \PHPUnit\Framework\TestCase
         );
         $containerConfig = ContainerConfig::create()
             ->withDefinitions(
-                $config->get('di-web')
+                $config->get('di')
             );
         $this->container = new Container($containerConfig);
         $this->aliases = $this->container->get(Aliases::class);
