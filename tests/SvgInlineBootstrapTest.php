@@ -6,13 +6,13 @@ class SvgInlineBootstrapTest extends TestCase
 {
     public function testBasic(): void
     {
-        $this->assertStringContainsString('viewBox="0 0 16 16" aria-hidden="true" role="img" class="bi bi-w-16"', $this->svgInline->bootstrap('award'));
-        $this->assertStringContainsString('role="img" class="bi bi-w-16"', $this->svgInline->bootstrap('nonexistent'));
+        $this->assertStringContainsString('viewBox="0 0 16 16" aria-hidden="true" role="img" class="bi"', $this->svgInline->bootstrap('award'));
+        $this->assertStringContainsString('role="img" class="bi"', $this->svgInline->bootstrap('nonexistent'));
     }
 
     public function testClass(): void
     {
-        $this->assertStringContainsString('class="yourClass bi bi-w-16"', $this->svgInline->bootstrap('award')->class('yourClass'));
+        $this->assertStringContainsString('class="yourClass bi"', $this->svgInline->bootstrap('award')->class('yourClass'));
     }
 
     public function testCss(): void
@@ -30,7 +30,7 @@ class SvgInlineBootstrapTest extends TestCase
     public function testFixedWidth(): void
     {
         $this->assertStringNotContainsString('bi-fw', $this->svgInline->bootstrap('award'));
-        $this->assertStringNotContainsString('bi-w-16', $this->svgInline->bootstrap('award')->fixedWidth(true));
+//        $this->assertStringNotContainsString('bi-w-16', $this->svgInline->bootstrap('award')->fixedWidth(true));
         $this->assertStringContainsString('bi bi-fw', $this->svgInline->bootstrap('award')->fixedWidth(true));
     }
 

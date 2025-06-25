@@ -12,16 +12,19 @@ use Yiisoft\Html\Html;
 final class SvgInlineBootstrap extends \YiiRocks\SvgInline\SvgInline implements SvgInlineBootstrapInterface
 {
     /** @var string CSS class basename */
+    /** @psalm-suppress PropertyNotSetInConstructor */
     protected string $prefix;
 
     /** @var string Path to the Bootstrap Icons folder */
+    /** @psalm-suppress PropertyNotSetInConstructor */
     private string $bootstrapIconsFolder;
 
     /** @var bool `true` for fixed-width class */
+    /** @psalm-suppress PropertyNotSetInConstructor */
     private bool $fixedWidth;
 
     /** @var BootstrapIcon icon properties */
-    private BootstrapIcon $icon;
+    private ?BootstrapIcon $icon = null;
 
     /**
      * Sets the name of the icon.
@@ -69,23 +72,24 @@ final class SvgInlineBootstrap extends \YiiRocks\SvgInline\SvgInline implements 
     }
 
     /**
-     * Prepares either the size class (default) or the width/height if either of these is given manually.
+     * Prepares either the class (default) or the width/height if either of these is given manually.
      *
      * @return void
      */
+    #[\Override]
     protected function setSvgSize(): void
     {
         parent::setSvgSize();
 
+        /** @psalm-var BootstrapIcon $this->icon */
         $width = $this->icon->get('width');
         $height = $this->icon->get('height');
 
         if (!$width && !$height) {
             Html::addCssClass($this->class, $this->prefix);
-            $widthClass = $this->icon->get('fixedWidth')
-                ? "{$this->prefix}-fw"
-                : "{$this->prefix}-w-" . ceil($this->svgWidth / $this->svgHeight * 16);
-            Html::addCssClass($this->class, $widthClass);
+            if ($this->icon->get('fixedWidth')) {
+                Html::addCssClass($this->class, "{$this->prefix}-fw");
+            }
         }
     }
 }
