@@ -34,13 +34,13 @@ Available options can be found in the [documentation](https://www.yii.rocks/svg-
 
 ## Unit testing
 
-The package is tested with [PHPUnit](https://phpunit.de/). To run tests:
+The package is tested with [Psalm](https://psalm.dev/) and [PHPUnit](https://phpunit.de/). To run tests:
 
 ```bash
-./vendor/bin/phpunit
+composer psalm
+composer phpunit
 ```
 
-[![Code Climate maintainability](https://img.shields.io/codeclimate/maintainability/YiiRocks/svg-inline-bootstrap.svg)](https://codeclimate.com/github/YiiRocks/svg-inline-bootstrap/maintainability)
+[![Maintainability](https://qlty.sh/badges/c0c355d2-bfc8-40bf-8611-65e42e856b35/maintainability.svg)](https://qlty.sh/gh/YiiRocks/projects/svg-inline-bootstrap)
 [![Codacy branch grade](https://img.shields.io/codacy/grade/1ac06a8fb1fe4d17ba208399381945e2/master.svg)](https://app.codacy.com/gh/YiiRocks/svg-inline-bootstrap)
-[![Scrutinizer code quality (GitHub/Bitbucket)](https://img.shields.io/scrutinizer/quality/g/yiirocks/svg-inline-bootstrap/master.svg)](https://scrutinizer-ci.com/g/yiirocks/svg-inline-bootstrap/?branch=master)
-![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/YiiRocks/svg-inline-bootstrap/analysis.yml?branch=master)
+![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/YiiRocks/svg-inline-bootstrap/phpunit.yml?branch=master)

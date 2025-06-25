@@ -10,7 +10,7 @@ namespace YiiRocks\SvgInline\Bootstrap;
 final class BootstrapIcon extends \YiiRocks\SvgInline\Icon
 {
     /** @var bool Set to `true` to have a fixed width icon */
-	/** @psalm-suppress PropertyNotSetInConstructor */
+    /** @psalm-suppress PropertyNotSetInConstructor */
     protected bool $fixedWidth;
 
     public function setFixedWidth(bool $value): void
