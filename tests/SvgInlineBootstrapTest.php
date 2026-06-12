@@ -56,4 +56,18 @@ class SvgInlineBootstrapTest extends TestCase
     {
         $this->assertStringContainsString('width="42" height="42"', $this->svgInline->bootstrap('award')->width(42));
     }
+
+    public function testBootstrapIconDirectInstantiation(): void
+    {
+        $icon = new \YiiRocks\SvgInline\Bootstrap\BootstrapIcon();
+        $icon->setName('test');
+        $this->assertSame('test', $icon->get('name'));
+    }
+
+    public function testBootstrapIconFixedWidthSetter(): void
+    {
+        $icon = new \YiiRocks\SvgInline\Bootstrap\BootstrapIcon();
+        $icon->setFixedWidth(true);
+        $this->assertTrue($icon->get('fixedWidth'));
+    }
 }
