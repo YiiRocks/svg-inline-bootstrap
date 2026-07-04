@@ -29,7 +29,7 @@ abstract class TestCase extends \PHPUnit\Framework\TestCase
     /**
      * @var ContainerInterface $container
      */
-    private $container;
+    protected $container;
 
     protected function setUp(): void
     {

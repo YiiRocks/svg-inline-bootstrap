@@ -37,6 +37,19 @@ class SvgInlineBootstrapTest extends TestCase
     public function testHeight(): void
     {
         $this->assertStringContainsString('width="42" height="42"', $this->svgInline->bootstrap('award')->height(42));
+        $this->assertStringNotContainsString('class="bi"', (string) $this->svgInline->bootstrap('award')->height(42));
+    }
+
+    public function testName(): void
+    {
+        /** @var \YiiRocks\SvgInline\Bootstrap\SvgInlineBootstrapInterface $bootstrap */
+        $bootstrap = $this->container->get(\YiiRocks\SvgInline\Bootstrap\SvgInlineBootstrapInterface::class);
+        $icon = $bootstrap->name('award');
+
+        $this->assertStringEndsWith(
+            'bootstrap-icons/icons' . DIRECTORY_SEPARATOR . 'award.svg',
+            (string) $icon->get('name')
+        );
     }
 
     public function testReset(): void
@@ -55,6 +68,7 @@ class SvgInlineBootstrapTest extends TestCase
     public function testWidth(): void
     {
         $this->assertStringContainsString('width="42" height="42"', $this->svgInline->bootstrap('award')->width(42));
+        $this->assertStringNotContainsString('class="bi"', (string) $this->svgInline->bootstrap('award')->width(42));
     }
 
     public function testBootstrapIconDirectInstantiation(): void

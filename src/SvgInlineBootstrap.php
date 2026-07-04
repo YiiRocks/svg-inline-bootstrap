@@ -13,15 +13,15 @@ final class SvgInlineBootstrap extends \YiiRocks\SvgInline\SvgInline implements 
 {
     /** @var string CSS class basename */
     /** @psalm-suppress PropertyNotSetInConstructor */
-    protected string $prefix;
+    protected readonly string $prefix;
 
     /** @var string Path to the Bootstrap Icons folder */
     /** @psalm-suppress PropertyNotSetInConstructor */
-    private string $bootstrapIconsFolder;
+    private readonly string $bootstrapIconsFolder;
 
     /** @var bool `true` for fixed-width class */
     /** @psalm-suppress PropertyNotSetInConstructor */
-    private bool $fixedWidth;
+    private readonly bool $fixedWidth;
 
     /** @var BootstrapIcon icon properties */
     private ?BootstrapIcon $icon = null;
@@ -48,6 +48,7 @@ final class SvgInlineBootstrap extends \YiiRocks\SvgInline\SvgInline implements 
      */
     public function setBootstrapIconsFolder(string $value): void
     {
+        /** @psalm-suppress InaccessibleProperty */
         $this->bootstrapIconsFolder = $this->aliases->get($value);
     }
 
@@ -58,6 +59,7 @@ final class SvgInlineBootstrap extends \YiiRocks\SvgInline\SvgInline implements 
      */
     public function setFixedWidth(bool $value): void
     {
+        /** @psalm-suppress InaccessibleProperty */
         $this->fixedWidth = $value;
     }
 
@@ -68,6 +70,7 @@ final class SvgInlineBootstrap extends \YiiRocks\SvgInline\SvgInline implements 
      */
     public function setPrefix(string $value): void
     {
+        /** @psalm-suppress InaccessibleProperty */
         $this->prefix = $value;
     }
 
