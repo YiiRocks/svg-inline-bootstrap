@@ -13,7 +13,7 @@
         "inline"
     ],
     "homepage": "https://www.yii.rocks/svg-inline-bootstrap/",
-    "license": "MIT",
+    "license": "BSD-3-Clause",
     "minimum-stability": "dev",
     "authors": [
         {
@@ -39,7 +39,7 @@
         "phpmd/phpmd": "@stable",
         "phpunit/phpunit": "@stable",
         "squizlabs/php_codesniffer": "^4.0",
-		"vimeo/psalm": "^6.0",
+        "vimeo/psalm": "^6.0",
         "yiisoft/config": "^1.6",
         "yiisoft/di": "*"
     },
@@ -94,5 +94,11 @@
             "infection/extension-installer": true,
             "yiisoft/config": true
         }
-    }
+    },
+    "funding": [
+        {
+            "type": "github",
+            "url": "https://github.com/sponsors/YiiRocks"
+        }
+    ]
 }
