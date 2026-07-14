@@ -15,6 +15,7 @@
     "homepage": "https://www.yii.rocks/svg-inline-bootstrap/",
     "license": "BSD-3-Clause",
     "minimum-stability": "dev",
+    "prefer-stable": true,
     "authors": [
         {
             "name": "Mr.42",
@@ -36,12 +37,12 @@
         "friendsofphp/php-cs-fixer": "@stable",
         "httpsoft/http-message": "^1.1",
         "infection/infection": "^0.34.0",
-        "phpmd/phpmd": "@stable",
         "phpunit/phpunit": "@stable",
-        "squizlabs/php_codesniffer": "^4.0",
         "vimeo/psalm": "^6.0",
+        "yiisoft/aliases": "^3.1",
         "yiisoft/config": "^1.6",
-        "yiisoft/di": "*"
+        "yiisoft/di": "*",
+        "yiisoft/files": "^2.0"
     },
     "autoload": {
         "psr-4": {
@@ -50,7 +51,6 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "YiiRocks\\SvgInline\\Bootstrap\\cs\\": "cs",
             "YiiRocks\\SvgInline\\Bootstrap\\tests\\": "tests"
         }
     },
@@ -62,16 +62,12 @@
     ],
     "scripts": {
         "php-cs-fixer": "@php vendor/bin/php-cs-fixer fix",
-        "phpcs": "@php vendor/bin/phpcs",
-        "phpmd": "@php vendor/bin/phpmd src/ text tests/data/phpmd_ruleset.xml",
-        "phpunit": "@php vendor/bin/phpunit --colors=always",
+        "phpunit": "@php vendor/bin/phpunit",
         "psalm": "@php vendor/bin/psalm",
         "infection": "@php vendor/bin/infection --configuration=infection.json --min-msi=100 --min-covered-msi=100"
     },
     "scripts-descriptions": {
         "php-cs-fixer": "Cleans to code with PHP Coding Standards Fixer.",
-        "phpcs": "PHP_CodeSniffer tokenizes PHP, JavaScript and CSS files and detects violations of a defined set of coding standards.",
-        "phpmd": "PHP Mess Detector.",
         "phpunit": "PHPUnit - programmer-oriented testing framework.",
         "psalm": "Psalm - static analysis tool for finding errors in PHP applications.",
         "infection": "Infection - PHP Mutation Testing Framework."
@@ -84,8 +80,8 @@
             "source-directory": "config"
         },
         "config-plugin": {
-            "di": "di.php",
-            "params": "params.php"
+            "params": "params.php",
+            "di": "di.php"
         }
     },
     "config": {

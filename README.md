@@ -49,6 +49,3 @@ composer psalm
 composer phpunit
 composer infection
 ```
-
-[![Maintainability](https://qlty.sh/badges/c0c355d2-bfc8-40bf-8611-65e42e856b35/maintainability.svg)](https://qlty.sh/gh/YiiRocks/projects/svg-inline-bootstrap)
-[![Codacy branch grade](https://img.shields.io/codacy/grade/1ac06a8fb1fe4d17ba208399381945e2/master.svg)](https://app.codacy.com/gh/YiiRocks/svg-inline-bootstrap)

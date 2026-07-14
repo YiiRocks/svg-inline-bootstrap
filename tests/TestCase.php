@@ -13,23 +13,15 @@ use Yiisoft\Config\ConfigPaths;
 use Yiisoft\Config\Modifier\RecursiveMerge;
 use Yiisoft\Di\Container;
 use Yiisoft\Di\ContainerConfig;
+use Yiisoft\Files\FileHelper;
 
 abstract class TestCase extends \PHPUnit\Framework\TestCase
 {
-    /**
-     * @var Aliases $aliases
-     */
-    protected $aliases;
+    protected Aliases $aliases;
 
-    /**
-     * @var SvgInline $svgInline
-     */
-    protected $svgInline;
+    protected SvgInline $svgInline;
 
-    /**
-     * @var ContainerInterface $container
-     */
-    protected $container;
+    protected ContainerInterface $container;
 
     protected function setUp(): void
     {
@@ -40,13 +32,43 @@ abstract class TestCase extends \PHPUnit\Framework\TestCase
             [RecursiveMerge::groups('params')]
         );
         $containerConfig = ContainerConfig::create()
-            ->withDefinitions(
-                $config->get('di')
-            );
+            ->withDefinitions($config->get('di'));
         $this->container = new Container($containerConfig);
         $this->aliases = $this->container->get(Aliases::class);
         $this->aliases->set('@root', dirname(__DIR__));
+        $this->aliases->set('@assets', '@root/tests/assets');
+        $this->aliases->set('@assetsUrl', '/baseUrl');
         $this->aliases->set('@vendor', '@root/vendor');
         $this->svgInline = $this->container->get(SvgInlineInterface::class);
+    }
+
+    protected function tearDown(): void
+    {
+        $this->removeAssets('@assets');
+        parent::tearDown();
+    }
+
+    protected function removeAssets(string $basePath): void
+    {
+        $dir = $this->aliases->get($basePath);
+        if (!is_dir($dir)) {
+            return;
+        }
+        $handle = opendir($dir);
+        if ($handle === false) {
+            throw new \Exception("Unable to open directory: $dir");
+        }
+        while (($file = readdir($handle)) !== false) {
+            if ($file === '.' || $file === '..' || $file === '.gitignore') {
+                continue;
+            }
+            $path = $dir . DIRECTORY_SEPARATOR . $file;
+            if (is_dir($path)) {
+                FileHelper::removeDirectory($path);
+            } else {
+                FileHelper::unlink($path);
+            }
+        }
+        closedir($handle);
     }
 }
