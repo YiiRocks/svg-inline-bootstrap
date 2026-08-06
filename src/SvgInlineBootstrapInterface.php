@@ -4,8 +4,6 @@ declare(strict_types=1);
 
 namespace YiiRocks\SvgInline\Bootstrap;
 
-use YiiRocks\SvgInline\SvgInlineInterface;
+use YiiRocks\SvgInline\IconSetInterface;
 
-interface SvgInlineBootstrapInterface extends SvgInlineInterface
-{
-}
+interface SvgInlineBootstrapInterface extends IconSetInterface {}

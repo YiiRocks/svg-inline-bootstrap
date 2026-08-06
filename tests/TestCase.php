@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace YiiRocks\SvgInline\Bootstrap\tests;
 
+use Exception;
 use Psr\Container\ContainerInterface;
 use YiiRocks\SvgInline\SvgInline;
 use YiiRocks\SvgInline\SvgInlineInterface;
@@ -19,9 +20,9 @@ abstract class TestCase extends \PHPUnit\Framework\TestCase
 {
     protected Aliases $aliases;
 
-    protected SvgInline $svgInline;
-
     protected ContainerInterface $container;
+
+    protected SvgInline $svgInline;
 
     protected function setUp(): void
     {
@@ -29,7 +30,7 @@ abstract class TestCase extends \PHPUnit\Framework\TestCase
         $config = new Config(
             new ConfigPaths(dirname(__DIR__), 'config'),
             '/',
-            [RecursiveMerge::groups('params')]
+            [RecursiveMerge::groups('params')],
         );
         $containerConfig = ContainerConfig::create()
             ->withDefinitions($config->get('di'));
@@ -56,7 +57,7 @@ abstract class TestCase extends \PHPUnit\Framework\TestCase
         }
         $handle = opendir($dir);
         if ($handle === false) {
-            throw new \Exception("Unable to open directory: $dir");
+            throw new Exception("Unable to open directory: $dir");
         }
         while (($file = readdir($handle)) !== false) {
             if ($file === '.' || $file === '..' || $file === '.gitignore') {

@@ -2,6 +2,8 @@
 
 declare(strict_types=1);
 
+use YiiRocks\SvgInline\Bootstrap\SvgInlineBootstrapInterface;
+
 return [
     'yiirocks/svg-inline-bootstrap' => [
         'bootstrapIconsFolder' => '@vendor/twbs/bootstrap-icons/icons',
@@ -9,5 +11,11 @@ return [
         'fill' => 'currentColor',
         'fixedWidth' => false,
         'prefix' => 'bi',
+    ],
+
+    'yiirocks/svg-inline' => [
+        'iconSets' => [
+            'bootstrap' => SvgInlineBootstrapInterface::class,
+        ],
     ],
 ];

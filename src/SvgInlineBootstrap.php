@@ -4,12 +4,14 @@ declare(strict_types=1);
 
 namespace YiiRocks\SvgInline\Bootstrap;
 
+use Override;
+use YiiRocks\SvgInline\SvgInline;
 use Yiisoft\Html\Html;
 
 /**
  * SvgInlineBootstrap provides a quick and easy way to access Bootstrap Icons.
  */
-final class SvgInlineBootstrap extends \YiiRocks\SvgInline\SvgInline implements SvgInlineBootstrapInterface
+final class SvgInlineBootstrap extends SvgInline implements SvgInlineBootstrapInterface
 {
     /** @var string CSS class basename */
     /** @psalm-suppress PropertyNotSetInConstructor */
@@ -23,22 +25,22 @@ final class SvgInlineBootstrap extends \YiiRocks\SvgInline\SvgInline implements 
     /** @psalm-suppress PropertyNotSetInConstructor */
     private readonly bool $fixedWidth;
 
-    /** @var BootstrapIcon icon properties */
-    private ?BootstrapIcon $icon = null;
-
     /**
      * Sets the name of the icon.
      *
      * @param string $name  name of the icon
+     * @param null|string $style unused, Bootstrap Icons has no style/variant concept
      * @return BootstrapIcon component object
      */
-    public function name(string $name): BootstrapIcon
+    #[Override]
+    public function name(string $name, ?string $style = null): BootstrapIcon
     {
-        $this->icon = new BootstrapIcon();
+        $icon = new BootstrapIcon();
         $iconFile = implode(DIRECTORY_SEPARATOR, [$this->bootstrapIconsFolder, "{$name}.svg"]);
-        $this->icon->setName($iconFile);
+        $icon->setName($iconFile);
+        $this->icon = $icon;
 
-        return $this->icon;
+        return $icon;
     }
 
     /**
@@ -79,12 +81,11 @@ final class SvgInlineBootstrap extends \YiiRocks\SvgInline\SvgInline implements 
      *
      * @return void
      */
-    #[\Override]
+    #[Override]
     protected function setSvgSize(): void
     {
         parent::setSvgSize();
 
-        /** @psalm-var BootstrapIcon $this->icon */
         $width = $this->icon->get('width');
         $height = $this->icon->get('height');
 

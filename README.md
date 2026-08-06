@@ -12,8 +12,8 @@ This extension provides simple functions for [Yii framework 3.0](http://www.yiif
 [![Packagist Version](https://img.shields.io/packagist/v/yiirocks/svg-inline-bootstrap.svg)](https://packagist.org/packages/yiirocks/svg-inline-bootstrap)
 [![PHP from Packagist](https://img.shields.io/packagist/php-v/yiirocks/svg-inline-bootstrap.svg)](https://php.net/)
 [![Packagist](https://img.shields.io/packagist/dt/yiirocks/svg-inline-bootstrap.svg)](https://packagist.org/packages/yiirocks/svg-inline-bootstrap)
-[![GitHub](https://img.shields.io/github/license/yiirocks/svg-inline-bootstrap.svg)](https://github.com/yiirocks/svg-inline-bootstrap/blob/master/LICENSE)
-[![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/yiirocks/svg-inline-bootstrap/build.yml?branch=master)](https://github.com/yiirocks/svg-inline-bootstrap/actions)
+[![GitHub](https://img.shields.io/github/license/yiirocks/svg-inline-bootstrap.svg)](https://github.com/yiirocks/svg-inline-bootstrap/blob/main/LICENSE)
+[![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/yiirocks/svg-inline-bootstrap/build.yml?branch=main)](https://github.com/yiirocks/svg-inline-bootstrap/actions)
 
 Stats for Nerds
 
